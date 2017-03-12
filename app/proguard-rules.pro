@@ -27,3 +27,6 @@
 
 # for Retrolambda
 -dontwarn java.lang.invoke.*
+
+# for Okhttp3
+-dontwarn okhttp3.**
