@@ -1,4 +1,4 @@
-package com.app2m.demo.network.module;
+package com.app2m.demo.network.module.util;
 
 /**
  * Created by CongHao on 2017/3/12.
@@ -9,5 +9,5 @@ public class MyConstants {
     private MyConstants() {
         throw new IllegalAccessError("can not access the method.");
     }
-    public static final String GJJ_HOST = "";
+    public static final String GJJ_ENDPOINT = "http://fepapi.beta.web.sdp.101.com/v1/";
 }
