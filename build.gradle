@@ -16,6 +16,15 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    //自定义buildDir
+    if (myBuildRootDir != null && !myBuildRootDir.trim().equalsIgnoreCase("")) {
+        if(rootProject.name == project.name) {
+            buildDir = "${myBuildRootDir}/${rootProject.name}/build"
+        } else {
+            buildDir = "${myBuildRootDir}/${rootProject.name}/${project.name}"
+        }
+    }
 }
 
 task clean(type: Delete) {
