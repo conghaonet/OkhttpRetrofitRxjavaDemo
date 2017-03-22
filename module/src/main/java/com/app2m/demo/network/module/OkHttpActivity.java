@@ -1,6 +1,7 @@
 package com.app2m.demo.network.module;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.databinding.ObservableField;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
