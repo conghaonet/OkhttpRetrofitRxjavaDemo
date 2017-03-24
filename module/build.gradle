@@ -5,6 +5,32 @@ android {
     dataBinding {
         enabled = true
     }
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+
+    //可以忽略lint错误，优化编译速度
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'license.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/services/com.fasterxml.jackson.core.JsonFactory'
+        exclude 'META-INF/services/com.fasterxml.jackson.core.ObjectCodec'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
     compileSdkVersion ANDROID_COMPILE_SDK_VERSION as int
     buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
@@ -35,18 +61,16 @@ dependencies {
     })
     compile "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
 
-
-
-
-
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     compile 'io.reactivex.rxjava2:rxjava:2.0.7'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
+
     testCompile 'junit:junit:4.12'
     testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
 }
